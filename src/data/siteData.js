@@ -13,10 +13,8 @@ export const SITE_DATA = {
 
   socials: {
     github: "https://github.com/NUURKEY47",
-    linkedin: "https://www.linkedin.com/in/noor-mohamed",
-    twitter: "https://x.com/nuurkey",
-    instagram: "https://instagram.com/rentorakenya",
-    tiktok: "https://tiktok.com/@rentorakenya",
+    linkedin: "https://www.linkedin.com/in/masternuurkey47/",
+    twitter: "https://x.com/yek_ruun",
   },
 
   about: {
@@ -117,12 +115,9 @@ export const SITE_DATA = {
 
   linksGrid: [
     { id: "github", label: "github", url: "https://github.com/NUURKEY47" },
-    { id: "linkedin", label: "linkedin", url: "https://www.linkedin.com/in/noor-mohamed" },
-    { id: "twitter", label: "x / twitter", url: "https://x.com/nuurkey" },
+    { id: "linkedin", label: "linkedin", url: "https://www.linkedin.com/in/masternuurkey47/" },
+    { id: "twitter", label: "x / twitter", url: "https://x.com/yek_ruun" },
     { id: "rentora", label: "rentora.cc", url: "https://rentora.cc" },
-    { id: "instagram", label: "instagram", url: "https://instagram.com/rentorakenya" },
-    { id: "tiktok", label: "tiktok", url: "https://tiktok.com/@rentorakenya" },
-    { id: "forexflow", label: "forexflow", url: "mailto:nuurkeymohamed47@gmail.com" },
     { id: "email", label: "email", url: "mailto:nuurkeymohamed47@gmail.com" },
   ],
 

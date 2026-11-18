@@ -64,7 +64,7 @@ function LinkIcon({ id }) {
 export default function LinksWindow() {
   return (
     <div className="space-y-6 py-2">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-7 gap-x-4 text-center">
+      <div className="flex flex-wrap items-center justify-center gap-8 py-2 text-center">
         {SITE_DATA.linksGrid.map((item) => (
           <a
             key={item.id}
