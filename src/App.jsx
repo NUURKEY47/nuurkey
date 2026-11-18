@@ -88,21 +88,21 @@ export default function App() {
     );
   }
 
-  // DEFAULT MAIN DESKTOP HUB WINDOW
+  // DEFAULT MAIN DESKTOP HUB WINDOW (Fully responsive for Mobile, Tablet & Desktop)
   return (
-    <div className="h-screen w-screen relative flex flex-col justify-between">
+    <div className="min-h-screen w-screen relative flex flex-col justify-between overflow-x-hidden">
       {/* TOP NAVIGATION BAR */}
-      <header className="fixed top-0 left-0 right-0 h-16 px-6 sm:px-10 flex items-center justify-between z-40">
+      <header className="fixed top-0 left-0 right-0 h-14 sm:h-16 px-4 sm:px-10 flex items-center justify-between z-40">
         <button
           onClick={toggleTheme}
           title="Toggle Theme"
-          className="text-2xl hover:scale-110 transition cursor-pointer"
+          className="text-xl sm:text-2xl hover:scale-110 transition cursor-pointer"
         >
           {darkMode ? "🌙" : "☀️"}
         </button>
 
         {/* Top-Right Links that switch to Full-Page Landing Pages */}
-        <nav className="flex items-center gap-4 sm:gap-6 mono text-xs sm:text-sm font-normal">
+        <nav className="flex items-center gap-2 sm:gap-6 mono text-xs sm:text-sm font-normal">
           <button
             onClick={() => setActivePage("engineering")}
             className="top-story-link cursor-pointer"
@@ -120,17 +120,17 @@ export default function App() {
 
       {/* CURVED HORIZON COLORED FOOTER BAND */}
       <div
-        className="fixed bottom-0 left-0 right-0 h-[32vh] pointer-events-none z-0 transition-colors duration-300"
+        className="fixed bottom-0 left-0 right-0 h-[28vh] sm:h-[32vh] pointer-events-none z-0 transition-colors duration-300"
         style={{
           background: "var(--bg-footer-band)",
           borderTop: "1.5px solid var(--card-border)",
-          borderTopLeftRadius: "50% 28px",
-          borderTopRightRadius: "50% 28px",
+          borderTopLeftRadius: "50% 24px",
+          borderTopRightRadius: "50% 24px",
         }}
       />
 
       {/* CENTER FIXED (NON-DRAGGABLE) MAIN CARD */}
-      <main className="flex-1 flex flex-col items-center justify-center z-10 px-4 pt-14 sm:pt-16">
+      <main className="flex-1 flex flex-col items-center justify-center z-10 px-4 pt-16 pb-6">
         <div className="card-stack-wrapper w-full max-w-[630px]">
           <div className="studio-card w-full overflow-hidden">
             <div className="studio-header mono text-xs sm:text-sm">
@@ -141,8 +141,8 @@ export default function App() {
               </div>
             </div>
 
-            <div className="px-8 sm:px-14 py-14 sm:py-18 text-center">
-              <h1 className="text-4xl sm:text-[54px] font-normal tracking-tight leading-tight">
+            <div className="px-5 sm:px-14 py-10 sm:py-16 text-center">
+              <h1 className="text-3xl sm:text-[54px] font-normal tracking-tight leading-tight">
                 {SITE_DATA.profile.greetingPrefix}
                 <span
                   className="font-medium"
@@ -152,19 +152,19 @@ export default function App() {
                 </span>
               </h1>
               <p
-                className="mt-3.5 text-lg sm:text-xl font-normal"
+                className="mt-2.5 sm:mt-3.5 text-base sm:text-xl font-normal"
                 style={{ color: "var(--ink-muted)" }}
               >
                 {SITE_DATA.profile.subtitle}
               </p>
 
               {/* 5 BORDERLESS DUOTONE LINKS: about, work, links, faq, contact */}
-              <div className="mt-12 sm:mt-14 flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+              <div className="mt-8 sm:mt-14 flex flex-wrap items-center justify-center gap-5 sm:gap-12">
                 <button
                   onClick={() => openWindow("about")}
-                  className="module-tile flex flex-col items-center justify-center gap-2 cursor-pointer"
+                  className="module-tile flex flex-col items-center justify-center gap-1.5 sm:gap-2 cursor-pointer"
                 >
-                  <svg className="w-11 h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                  <svg className="w-9 h-9 sm:w-11 sm:h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
                     <circle className="duo-fill" cx="12" cy="12" r="9" />
                     <path d="M12 16v-4M12 8h.01" />
                   </svg>
@@ -173,9 +173,9 @@ export default function App() {
 
                 <button
                   onClick={() => openWindow("work")}
-                  className="module-tile flex flex-col items-center justify-center gap-2 cursor-pointer"
+                  className="module-tile flex flex-col items-center justify-center gap-1.5 sm:gap-2 cursor-pointer"
                 >
-                  <svg className="w-11 h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                  <svg className="w-9 h-9 sm:w-11 sm:h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
                     <path className="duo-fill" d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
                   </svg>
                   <span className="mono text-xs sm:text-sm font-normal">work</span>
@@ -183,9 +183,9 @@ export default function App() {
 
                 <button
                   onClick={() => openWindow("links")}
-                  className="module-tile flex flex-col items-center justify-center gap-2 cursor-pointer"
+                  className="module-tile flex flex-col items-center justify-center gap-1.5 sm:gap-2 cursor-pointer"
                 >
-                  <svg className="w-11 h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                  <svg className="w-9 h-9 sm:w-11 sm:h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
                     <rect className="duo-fill" x="3" y="4" width="18" height="16" rx="4" />
                     <path d="M9 12h6M12 9v6" />
                   </svg>
@@ -194,9 +194,9 @@ export default function App() {
 
                 <button
                   onClick={() => openWindow("faq")}
-                  className="module-tile flex flex-col items-center justify-center gap-2 cursor-pointer"
+                  className="module-tile flex flex-col items-center justify-center gap-1.5 sm:gap-2 cursor-pointer"
                 >
-                  <svg className="w-11 h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                  <svg className="w-9 h-9 sm:w-11 sm:h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
                     <path className="duo-fill" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" />
                   </svg>
@@ -205,9 +205,9 @@ export default function App() {
 
                 <button
                   onClick={() => openWindow("contact")}
-                  className="module-tile flex flex-col items-center justify-center gap-2 cursor-pointer"
+                  className="module-tile flex flex-col items-center justify-center gap-1.5 sm:gap-2 cursor-pointer"
                 >
-                  <svg className="w-11 h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                  <svg className="w-9 h-9 sm:w-11 sm:h-11" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
                     <rect className="duo-fill" x="3" y="5" width="18" height="14" rx="2" />
                     <path d="m3 7 9 6 9-6" />
                   </svg>
@@ -219,7 +219,7 @@ export default function App() {
         </div>
 
         {/* FOOTER SOCIALS */}
-        <footer className="mt-7 flex flex-col items-center gap-2.5 z-20">
+        <footer className="mt-6 sm:mt-7 flex flex-col items-center gap-2.5 z-20">
           <div className="flex items-center gap-3">
             <a href={SITE_DATA.socials.github} target="_blank" rel="noreferrer" title="GitHub" className="social-pill">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -243,14 +243,13 @@ export default function App() {
         </footer>
       </main>
 
-      {/* POPUP WINDOWS ON MAIN HUB */}
+      {/* POPUP WINDOWS (Auto-centered on mobile, tablet & desktop!) */}
       <DraggableWindow
         id="about"
         title="about"
         isOpen={windows.about.open}
         zIndex={windows.about.z}
-        initialTop={55}
-        initialLeft={Math.max(20, Math.round(window.innerWidth * 0.2))}
+        initialTop={60}
         widthClass="w-[92vw] sm:w-[60vw] max-w-[880px]"
         onClose={closeWindow}
         onFocus={bringToFront}
@@ -264,7 +263,6 @@ export default function App() {
         isOpen={windows.work.open}
         zIndex={windows.work.z}
         initialTop={70}
-        initialLeft={Math.max(20, Math.round(window.innerWidth * 0.2))}
         widthClass="w-[92vw] sm:w-[60vw] max-w-[880px]"
         onClose={closeWindow}
         onFocus={bringToFront}
@@ -277,9 +275,8 @@ export default function App() {
         title="links"
         isOpen={windows.links.open}
         zIndex={windows.links.z}
-        initialTop={90}
-        initialLeft={Math.max(20, Math.round(window.innerWidth * 0.26))}
-        widthClass="w-[90vw] sm:w-[46vw] max-w-[560px]"
+        initialTop={85}
+        widthClass="w-[92vw] sm:w-[46vw] max-w-[560px]"
         onClose={closeWindow}
         onFocus={bringToFront}
       >
@@ -291,9 +288,8 @@ export default function App() {
         title="frequently asked questions"
         isOpen={windows.faq.open}
         zIndex={windows.faq.z}
-        initialTop={100}
-        initialLeft={Math.max(20, Math.round(window.innerWidth * 0.24))}
-        widthClass="w-[90vw] sm:w-[50vw] max-w-[620px]"
+        initialTop={95}
+        widthClass="w-[92vw] sm:w-[50vw] max-w-[620px]"
         onClose={closeWindow}
         onFocus={bringToFront}
       >
@@ -305,9 +301,8 @@ export default function App() {
         title="contact"
         isOpen={windows.contact.open}
         zIndex={windows.contact.z}
-        initialTop={95}
-        initialLeft={Math.max(20, Math.round(window.innerWidth * 0.28))}
-        widthClass="w-[90vw] sm:w-[44vw] max-w-[520px]"
+        initialTop={90}
+        widthClass="w-[92vw] sm:w-[44vw] max-w-[520px]"
         onClose={closeWindow}
         onFocus={bringToFront}
       >
