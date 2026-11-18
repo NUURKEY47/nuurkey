@@ -1,0 +1,7 @@
+services:
+  nuurkey_web:
+    build: .
+    container_name: nuurkey_web
+    restart: always
+    ports:
+      - "8085:80"
